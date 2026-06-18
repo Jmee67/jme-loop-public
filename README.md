@@ -101,11 +101,23 @@ npm install
 Keep the engine outside the repos it operates on:
 
 ```bash
-git clone https://github.com/Jmee67/jme-loop-public.git ~/.jme-loop
-cd ~/.jme-loop
+git clone https://github.com/Jmee67/jme-loop-public.git ~/.jme-loop-public
+cd ~/.jme-loop-public
 npm install
 npm link
 ```
+
+Before running `npm link` on a machine that already uses Jme-Loop, check what is installed:
+
+```bash
+which loop || true
+npm ls -g --depth=0 | grep -Ei 'jme-loop|loop' || true
+if [ -d ~/.jme-loop ]; then git -C ~/.jme-loop remote -v; fi
+```
+
+If `~/.jme-loop` already exists and points at a different repository, leave it in place.
+Use `~/.jme-loop-public` for this public checkout. `npm link` registers one global
+`loop` command, so only run it when you intend the global CLI to point at this checkout.
 
 Then arm a project repo from inside that repo:
 
@@ -342,5 +354,7 @@ e2e/                      acceptance script
 
 When setting up a different project repo from a coding-agent workspace, use the prompt in
 [docs/bootstrap-external-repo.md](./docs/bootstrap-external-repo.md). It tells the agent
-to locate or clone this engine outside the project, run `npm link`, arm the project with
-`loop init`, and stop after discovery until you approve planning or execution.
+to inspect any existing engine checkout first, locate or clone this engine outside the
+project, run `npm link` only when it will not clobber another intended global `loop`,
+arm the project with `loop init`, and stop after discovery until you approve planning or
+execution.

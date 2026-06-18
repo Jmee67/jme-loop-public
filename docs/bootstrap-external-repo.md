@@ -12,12 +12,16 @@ into the target repo.
 Use this looping infrastructure: https://github.com/Jmee67/jme-loop-public
 
 Set it up for this repo without copying the engine into this repo:
-1. Clone or locate jme-loop outside this project repo.
-2. In the jme-loop checkout, install dependencies and run `npm link`.
-3. Return to this project repo.
-4. Run `loop init`.
-5. Run `loop discover`.
-6. Report what is loop-ready, what has planning debt, and what backlog proposals were found.
+1. Check whether `loop` is already installed with `which loop` and `npm ls -g --depth=0`.
+2. If `~/.jme-loop` exists, inspect `git -C ~/.jme-loop remote -v`.
+3. Do not overwrite, relink, or reuse an existing engine checkout that points at a different repo.
+4. Clone or locate this public engine outside the project repo, preferably at `~/.jme-loop-public`.
+5. In the public engine checkout, install dependencies.
+6. Run `npm link` only if the global `loop` command is not already intentionally owned by another checkout.
+7. Return to this project repo.
+8. Run `loop init`.
+9. Run `loop discover`.
+10. Report what is loop-ready, what has planning debt, and what backlog proposals were found.
 
 Do not run `loop autoplan` or `loop run` until I approve.
 ```
@@ -27,11 +31,19 @@ Do not run `loop autoplan` or `loop run` until I approve.
 First install the shared engine once:
 
 ```bash
-git clone https://github.com/Jmee67/jme-loop-public.git ~/.jme-loop
-cd ~/.jme-loop
+which loop || true
+npm ls -g --depth=0 | grep -Ei 'jme-loop|loop' || true
+if [ -d ~/.jme-loop ]; then git -C ~/.jme-loop remote -v; fi
+
+git clone https://github.com/Jmee67/jme-loop-public.git ~/.jme-loop-public
+cd ~/.jme-loop-public
 npm install
 npm link
 ```
+
+If `~/.jme-loop` already exists and points at another repository, leave it alone. `npm link`
+registers a single global `loop` binary, so run it only when this public checkout should own
+the global command.
 
 Then arm a project repo from inside that repo:
 
