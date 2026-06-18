@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Write",
+      "Bash(npm test:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm run verify:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm install)",
+      "Bash(npm ci)",
+      "Bash(npx tsc:*)",
+      "Bash(node:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

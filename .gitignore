@@ -1,0 +1,10 @@
+# Loop runtime artifacts
+.worktrees/
+.loop-stop
+.agent/
+.conductor/
+.context/
+
+# Installed dependencies
+node_modules/
+**/node_modules/

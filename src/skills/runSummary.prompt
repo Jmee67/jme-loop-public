@@ -1,0 +1,23 @@
+# core/run-summary — INVARIANTS
+# 1. Summarize ONLY the supplied evidence. Invent nothing not present in it.
+# 2. Return a SINGLE JSON object and nothing else — no prose, no code fences.
+# 3. headline must be a non-empty string (one sentence overview of the run).
+# 4. observations must be a string[] (key points; use [] when none).
+# 5. EXIT CHECKLIST: headline non-empty string; observations is an array.
+#    Output is failure unless both are present and valid.
+
+You are writing the comprehension summary for one loop run. Summarize the evidence below
+into the required JSON object.
+
+Mode: {{mode}}
+- "autopilot": full morning summary — include what changed, why, what was verified,
+  what risks remain, and what decisions were made.
+- "review": compact evidence form — include what changed and what requires human attention.
+
+Required output shape:
+{ "headline": string, "observations": string[] }
+
+--- EVIDENCE (decision log JSON) ---
+{{evidence}}
+
+Return ONLY the JSON object.

@@ -1,0 +1,41 @@
+{
+  "schema_version": "print-plan.v1",
+  "epic_id": "EPIC-010",
+  "repo_root": "/repo",
+  "base_branch": "master",
+  "epicId": "EPIC-010",
+  "repoRoot": "/repo",
+  "baseBranch": "master",
+  "implementationTickets": [
+    "TICKET-056"
+  ],
+  "planningTickets": [],
+  "blockedTickets": [],
+  "dependency_order": [
+    "TICKET-056"
+  ],
+  "command_steps": [
+    {
+      "name": "doctor",
+      "command": "loop doctor EPIC-010",
+      "purpose": "Refuse unsafe epic state before selecting work."
+    },
+    {
+      "name": "verify",
+      "command": "npm test",
+      "purpose": "Prove changed repo still passes."
+    }
+  ],
+  "rationale": [
+    "TICKET-056: selected because readiness=loop_ready."
+  ],
+  "expectedVerification": "npm test",
+  "touches": [
+    "code",
+    "docs"
+  ],
+  "estimatedRisk": "medium",
+  "stops": [],
+  "warnings": [],
+  "mode": "implementation"
+}

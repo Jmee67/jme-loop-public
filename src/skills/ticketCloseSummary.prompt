@@ -1,0 +1,26 @@
+# core/ticket-close-summary — INVARIANTS
+# 1. Summarize ONLY the supplied artifacts. Invent nothing not present in them.
+# 2. Return a SINGLE JSON object and nothing else — no prose, no code fences.
+# 3. verdict ∈ {"pass","fail","needs-review"}. Empty/uncertain evidence → "needs-review".
+# 4. EXIT CHECKLIST: verdict set; headline non-empty; keyChanges/risks/unresolved are arrays
+#    (use [] when none). Output is failure unless all are present and valid.
+
+You are writing the close summary for one ticket attempt. Summarize the review findings,
+verification output, and diff summary below into the required JSON object.
+
+Required output shape:
+{ "verdict": "pass|fail|needs-review", "headline": string,
+  "keyChanges": string[], "risks": string[], "unresolved": string[] }
+
+TICKET: {{ticketId}}
+
+--- REVIEW FINDINGS ---
+{{review}}
+
+--- VERIFICATION OUTPUT ---
+{{verification}}
+
+--- DIFF SUMMARY ---
+{{diffSummary}}
+
+Return ONLY the JSON object.

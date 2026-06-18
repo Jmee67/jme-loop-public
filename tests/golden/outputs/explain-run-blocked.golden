@@ -1,0 +1,10 @@
+Run run-blocked: stopped
+Attempted: TICKET-060
+Processed: (none)
+Changed: (none listed; count=0)
+Worktree: /repo/.worktrees/TICKET-060
+PR: none
+Verification: failed — npm test (1 failing)
+Review: unknown
+Needs attention: verification failed
+Logs: evidence=.agent/runs/run-blocked/evidence.json, summary=.agent/runs/run-blocked/summary.md, decisions=.agent/runs/run-blocked/decision-log.md

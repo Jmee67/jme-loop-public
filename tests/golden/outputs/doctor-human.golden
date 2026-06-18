@@ -1,0 +1,13 @@
+Doctor report for EPIC-010
+Repo: /repo
+Base branch: master
+
+Checks:
+- PASS preflight: Required local loop capabilities are present.
+- WARN no-loop-ready: No implementation ticket will start for this epic.
+
+Tickets:
+- TICKET-054: closed (status=done, loop=true)
+- TICKET-056: loop_ready (status=planned, loop=true)
+
+Summary: 0 stop(s), 1 warning(s).

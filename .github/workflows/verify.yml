@@ -1,0 +1,19 @@
+name: verify
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      # The drift test asserts the repo is "installed"
+      # (core.hooksPath = .githooks). A fresh CI checkout lacks that local git config, so set it.
+      - run: git config core.hooksPath .githooks
+      - run: npm run verify

@@ -1,0 +1,1 @@
+{ "connectors": [ { "id": "gh-cli", "enabled": false, "env": {} } ] }

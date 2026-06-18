@@ -1,0 +1,54 @@
+{
+  "schema_version": "doctor.v1",
+  "epic_id": "EPIC-010",
+  "repo_root": "/repo",
+  "base_branch": "master",
+  "epicId": "EPIC-010",
+  "repoRoot": "/repo",
+  "baseBranch": "master",
+  "checks": [
+    {
+      "status": "PASS",
+      "code": "preflight",
+      "message": "Required local loop capabilities are present.",
+      "remediation": "No action required.",
+      "evidence": []
+    },
+    {
+      "status": "WARN",
+      "code": "no-loop-ready",
+      "message": "No implementation ticket will start for this epic.",
+      "remediation": "Release a planned ticket.",
+      "evidence": []
+    }
+  ],
+  "tickets": [
+    {
+      "id": "TICKET-054",
+      "title": "Doctor contract",
+      "status": "done",
+      "loop": true,
+      "readiness": "closed",
+      "blockers": []
+    },
+    {
+      "id": "TICKET-056",
+      "title": "Golden outputs",
+      "status": "planned",
+      "loop": true,
+      "readiness": "loop_ready",
+      "blockers": []
+    }
+  ],
+  "summary": {
+    "stops": 0,
+    "warnings": 1,
+    "tickets": 2,
+    "loop_ready": 1,
+    "blocked": 0,
+    "planning_debt": 0
+  },
+  "exit_code": 0,
+  "stopCount": 0,
+  "warnCount": 1
+}

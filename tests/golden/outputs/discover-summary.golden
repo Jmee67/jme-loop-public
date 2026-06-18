@@ -1,0 +1,7 @@
+Loop discovery
+Project context: present
+Totals: epics=1 tickets=1 executable=1 blocked=0 planning-debt=0 not-released=0 inactive=0 invalid=0
+
+EPIC-010: Steward loop
+  Executable:
+    - TICKET-056 (docs/epics/EPIC-010/tickets/TICKET-056.md) — loop-ready

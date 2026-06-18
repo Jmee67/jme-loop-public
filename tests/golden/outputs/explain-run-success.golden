@@ -1,0 +1,10 @@
+Run run-success: completed
+Attempted: TICKET-059 (EPIC-010)
+Processed: TICKET-059
+Changed: src/explainRun.ts, src/cli.ts
+Worktree: /repo/.worktrees/TICKET-059
+PR: open-pr — https://github.test/pull/1 (loop/ticket-059)
+Verification: passed — npm run verify
+Review: APPROVE — Looks good
+Needs attention: none
+Logs: evidence=.agent/runs/run-success/evidence.json, summary=.agent/runs/run-success/summary.md, decisions=.agent/runs/run-success/decision-log.md

@@ -1,0 +1,26 @@
+# core/diagnose-verification — INVARIANTS
+# 1. Diagnose ONLY from the supplied failure output + plan. Invent nothing else.
+# 2. Return a SINGLE JSON object and nothing else — no prose, no code fences.
+# 3. planWorkable ∈ {"yes","uncertain","no"}. Use "no" ONLY when the frozen plan itself
+#    cannot pass — not merely that this attempt failed. Unsure → "uncertain".
+# 4. EXIT CHECKLIST: hypothesis non-empty; planWorkable set; suggestedDirection present
+#    (use "" only if truly nothing to suggest). Output is a failure unless all are valid.
+
+You are diagnosing a failed build/verification attempt for a frozen implementation plan.
+Form a root-cause hypothesis and the single most useful next step for the builder.
+
+Required output shape:
+{ "hypothesis": string, "planWorkable": "yes|uncertain|no", "suggestedDirection": string }
+
+TICKET: {{ticketId}}
+
+--- FROZEN PLAN ---
+{{plan}}
+
+--- THIS ATTEMPT'S VERIFICATION OUTPUT ---
+{{failureOutput}}
+
+--- PREVIOUS ATTEMPT'S OUTPUT (empty if this is the first failure) ---
+{{previousFailureOutput}}
+
+Return ONLY the JSON object.

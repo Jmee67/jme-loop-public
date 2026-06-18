@@ -1,0 +1,10 @@
+Usage:
+  loop init [--reconfigure] [--repo <path>]
+  loop discover [--repo <path>]
+  loop doctor EPIC-XXX [--repo <path>] [--json]
+  loop print-plan EPIC-XXX [--repo <path>] [--json]
+  loop autoplan EPIC-XXX [--repo <path>]
+  loop run [--once] [--repo <path>]
+  loop explain-run latest|<run-id> [--json] [--handoff] [--repo <path>]
+
+Run from inside a project repo. --repo is for automation; the common workflow is `cd project && loop ...`.

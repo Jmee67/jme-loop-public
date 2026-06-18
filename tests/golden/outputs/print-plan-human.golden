@@ -1,0 +1,20 @@
+Print plan for EPIC-010
+Repo: /repo
+Base branch: master
+Mode: implementation
+
+Selected tickets: TICKET-056
+Planning tickets: (none)
+Blocked tickets: (none)
+Expected verification: npm test
+Estimated risk: medium
+Touches: code, docs
+
+Command steps:
+- doctor: loop doctor EPIC-010 — Refuse unsafe epic state before selecting work.
+- verify: npm test — Prove changed repo still passes.
+
+Rationale:
+- TICKET-056: selected because readiness=loop_ready.
+
+Implementation would start for the selected loop-ready tickets.

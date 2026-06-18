@@ -1,0 +1,35 @@
+{
+  "name": "jme-loop",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Repo-local unattended coding-agent loop for markdown ticket workflows.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jmee67/jme-loop-public.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jmee67/jme-loop-public/issues"
+  },
+  "homepage": "https://github.com/Jmee67/jme-loop-public#readme",
+  "bin": {
+    "loop": "./bin/loop.mjs"
+  },
+  "scripts": {
+    "loop": "node --experimental-strip-types src/config.ts",
+    "loop:once": "node --experimental-strip-types src/config.ts --once",
+    "loop:dry": "node --experimental-strip-types src/config.ts --once --dry-run",
+    "loop:install": "node --experimental-strip-types src/install.ts",
+    "doctor": "node --experimental-strip-types src/doctor.ts",
+    "print-plan": "node --experimental-strip-types src/printPlan.ts",
+    "autoplan": "node --experimental-strip-types src/autoplan.ts",
+    "coverage:epic": "node --experimental-strip-types src/coverageScan.ts",
+    "test": "node --experimental-strip-types --test 'src/**/*.test.ts'",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

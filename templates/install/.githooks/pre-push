@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# Installed via `git config --local core.hooksPath .githooks` (npm run loop:install).
+exec "$(git rev-parse --show-toplevel)/scripts/check-in-progress-tickets.sh"
